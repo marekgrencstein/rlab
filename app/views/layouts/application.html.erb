@@ -5,41 +5,18 @@
   <!--<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>-->
   <link rel="stylesheet" type="text/css" href="/assets/theme.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="/assets/styleHandler.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>-->
+  <%= csrf_meta_tags %>
 </head>
 <body>
-<!--
-<div id="user_header">
-	<%if current_user%>
-		Logged in as <%= current_user.email%>.
-		<%=link_to "Log Out", logout_path%>
-	<%else%>
-		<%=link_to "Sign Up", signup_path%> or
-		<%=link_to "Log In", login_path%>
-	<% end %>
-</div>
-<div id="lab_header">
-	<%if selected_lab%>
-		Working with <%= selected_lab.name%>.
-		
-	<%else%>
-		Please select a lab to start SCIENCE!
-	<% end %>
-</div>
-
-<%flash.each do |key, value|%>
-	<%= content_tag(:div, class: "alert alert-#{key}") do%>
-	<p><%= value %></p>
-	<%end %>
-<%end %>
-
- HEADER -->
 	<div id="header" >
-	REMOTE LAB
+		<div id="title-panel" >REMOTE LAB</div>
+		<div id="login-panel" >
+			User: <input type="text" class="text-field" />
+			Password:</td><td><input type="password" class="text-field" />
+			<input type="button" id="login-panel-button" value="Login" />
+		</div>
 	</div>
-	
 	<div id="two-collums" >
 		<div id="navigator" >
 			<div class="nav-option" > Person </div>
@@ -47,14 +24,16 @@
 			<div class="nav-option" > Labs </div>
 			<div class="nav-option" > Booking </div>
 		</div>
-	<!-- PAGE CONTENT -->
 		<div id="content">
 
 			<%= yield %>
-			<%=request.raw_post%>
+			<!--<%=request.raw_post%>-->
+			
 		</div>
 		
 	</div>
+	
+	<script src="/assets/styleHandler.js"></script>
 
 </body>
 </html>
