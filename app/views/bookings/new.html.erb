@@ -1,12 +1,3 @@
-
-<!--
-
-
-
-<%= link_to 'Back', bookings_path %>
--->
-
-<!-- booking -->
 			
 	<div id="booking" >
 		<span id="tooltip" ></span>
@@ -19,14 +10,12 @@
 	</div>
 	<link rel="stylesheet" type="text/css" href="/assets/booking.css" />
 	<script>
-
+	
 		var jasonbookings = <%=jasonbookings%>;
-		var jasonlabsettings = <%=jasonlabsettings(selected_lab)%>;
+				var jasonlabsettings = <%=jasonlabsettings%>;
 
 	</script>
 	<script src="/assets/booking.js"></script>
+	
+	
 <br>
-<%=jasonbookings%><br>
-<%=jasonlabsettings(selected_lab)%>
-<%= render 'form' %>
-	<%=request.raw_post%>
